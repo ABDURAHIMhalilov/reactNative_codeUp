@@ -23,8 +23,8 @@ const Course = () => {
       <Tab.Navigator>
         <Tab.Screen name="Мои курсы" component={Home} />
         {/* <Tab.Screen name="Sertifikatlarim" component={Course} /> */}
-        <Tab.Screen name="Мои сертификаты" component={Setting} />
-        <Tab.Screen name="Мои наставники" component={Mentor} />
+        <Tab.Screen name="Cертификаты" component={Setting} />
+        <Tab.Screen name="Hаставники" component={Mentor} />
       </Tab.Navigator>
       {/* </View> */}
     </View>
