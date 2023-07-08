@@ -21,7 +21,14 @@ const Course = () => {
     <View style={{ width: "100%", height: "100%" }}>
       {/* <View> */}
       <Tab.Navigator>
-        <Tab.Screen name="Мои курсы" component={Home} />
+        <Tab.Screen
+          style={{
+            fontSize: "8 !important",
+          }}
+          fontSize={8}
+          name="Мои курсы"
+          component={Home}
+        />
         {/* <Tab.Screen name="Sertifikatlarim" component={Course} /> */}
         <Tab.Screen name="Cертификаты" component={Setting} />
         <Tab.Screen name="Hаставники" component={Mentor} />
