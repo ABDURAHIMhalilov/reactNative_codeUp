@@ -25,7 +25,6 @@ const Course = () => {
           style={{
             fontSize: "8 !important",
           }}
-          fontSize={8}
           name="Мои курсы"
           component={Home}
         />

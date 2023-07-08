@@ -5,6 +5,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 
 const index = () => {
   const [final, setFinal] = useState();
+  const [state, setState] = useState("none");
   useEffect(() => {
     setFinal(
       <View
@@ -35,6 +36,94 @@ const index = () => {
             padding: 10,
           }}
         >
+          <View
+            style={{
+              backgroundColor: "dodgerblue",
+              width: 40,
+              height: 30,
+              position: "fixed",
+              zIndex: 2,
+              top: 420,
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 20,
+              borderRadius: 10,
+              right: -10,
+              paddingLeft: 10,
+            }}
+            onClick={() => setState("flex")}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontSize: 25,
+              }}
+            >
+              {"<"}
+            </Text>
+          </View>
+
+          <View
+            style={{
+              width: "100%",
+              position: "absolute",
+              zIndex: 2,
+              height: 600,
+              padding: 10,
+              display: state,
+              right: 0,
+              top: 0,
+            }}
+          >
+            <View
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "white",
+                position: "relative",
+              }}
+            >
+              <View
+                style={{
+                  width: "100%",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <Text
+                  style={{
+                    borderWidth: 1,
+                    borderRightColor: "red",
+                    borderBottomColor: "white",
+                    borderLeftColor: "white",
+                    borderTopColor: "white",
+                    paddingRight: 10,
+                  }}
+                >
+                  Raspberry Pi dasturlash asoslari
+                </Text>
+                <Text>
+                  24 ta video
+                  <br />
+                  38 soat
+                </Text>
+              </View>
+              <View
+                onClick={() => setState("none")}
+                style={{
+                  position: "absolute",
+                  bottom: 190,
+                  left: -10,
+                  backgroundColor: "dodgerblue",
+                  padding: 10,
+                }}
+              >
+                <Text>{">"}</Text>
+              </View>
+            </View>
+          </View>
           <View>
             <Image
               style={{

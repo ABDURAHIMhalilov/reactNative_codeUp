@@ -5,6 +5,17 @@
       "bundler": "metro"
     },
     "name": "tabs-app",
-    "slug": "tabs-app"
+    "slug": "tabs-app",
+    "extra": {
+      "eas": {
+        "projectId": "1d1f072c-b91c-4d48-89c7-815b722630af"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.CodeUp"
+    },
+    "android": {
+      "package": "com.CodeUp"
+    }
   }
 }
