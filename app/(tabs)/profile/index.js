@@ -2,10 +2,87 @@ import { View, Text, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+// import Profile from "./_layout";
+import SyncStorage from "sync-storage";
+import { Collapse } from "antd";
+
+const items = [
+  {
+    key: "1",
+    label: "1. Dasturlashga kirish va o’rnatish jarayoni",
+    children: (
+      <View
+        style={{
+          width: "100%",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 10,
+        }}
+      >
+        <Image
+          style={{
+            width: 100,
+            height: 60,
+          }}
+          source={require("../../img/download.png")}
+        />
+        <View
+          style={{
+            width: "60%",
+          }}
+        >
+          <Text style={{ fontSize: 17 }}>1.2 Lorem ipsum dolor sit.</Text>
+          <Text>
+            <AntDesign name="clockcircleo" style={{ marginRight: 5 }} />
+            2022:20:20
+          </Text>
+        </View>
+      </View>
+    ),
+  },
+  {
+    key: "2",
+    label: "2. Backend bo'yicha kurslar",
+    children: (
+      <View
+        style={{
+          width: "100%",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 10,
+        }}
+      >
+        <Image
+          style={{
+            width: 100,
+            height: 60,
+          }}
+          source={require("../../img/Rectangle.png")}
+        />
+        <View
+          style={{
+            width: "60%",
+          }}
+        >
+          <Text style={{ fontSize: 17 }}>1.2 Lorem ipsum dolor sit.</Text>
+          <Text>
+            <AntDesign name="clockcircleo" style={{ marginRight: 5 }} />
+            2022:20:20
+          </Text>
+        </View>
+      </View>
+    ),
+  },
+];
 
 const index = () => {
+  // const Drawer = createDrawerNavigator();
   const [final, setFinal] = useState();
   const [state, setState] = useState("none");
+  // const [ page, setPage ] = useState(SyncStorage.get())
   useEffect(() => {
     setFinal(
       <View
@@ -27,9 +104,14 @@ const index = () => {
     setTimeout(() => {
       setFinal(null);
     }, 1900);
+    SyncStorage.set("page", 1);
   }, []);
+
   return (
     <>
+      {/* <Drawer.Navigator>
+        <Drawer.Screen name="home" component={Profile} />
+      </Drawer.Navigator> */}
       {final === null ? (
         <View
           style={{
@@ -90,6 +172,7 @@ const index = () => {
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
+                  padding: 20,
                 }}
               >
                 <Text
@@ -100,28 +183,18 @@ const index = () => {
                     borderLeftColor: "white",
                     borderTopColor: "white",
                     paddingRight: 10,
+                    maxWidth: "60%",
                   }}
                 >
-                  Raspberry Pi dasturlash asoslari
+                  Основы программирования на Raspberry Pi
                 </Text>
                 <Text>
-                  24 ta video
+                  24 видео
                   <br />
-                  38 soat
+                  38 час
                 </Text>
               </View>
-              <View
-                onClick={() => setState("none")}
-                style={{
-                  position: "absolute",
-                  bottom: 190,
-                  left: -10,
-                  backgroundColor: "dodgerblue",
-                  padding: 10,
-                }}
-              >
-                <Text>{">"}</Text>
-              </View>
+              <Collapse items={items} defaultActiveKey={["1"]} />
             </View>
           </View>
           <View>

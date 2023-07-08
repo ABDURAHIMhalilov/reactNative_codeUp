@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Link } from "expo-router";
-// import SyncStorage from "sync-storage";
+import SyncStorage from "sync-storage";
 
 export default function Home() {
   // const [state, setState] = useState(SyncStorage.get("zafar"));
@@ -27,6 +27,7 @@ export default function Home() {
         />
       </View>
     );
+    SyncStorage.set('page', 0)
     setTimeout(() => {
       setFinal(null);
     }, 1900);
