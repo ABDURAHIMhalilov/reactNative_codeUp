@@ -74,12 +74,15 @@ export default function Setting() {
         <View
           style={{
             backgroundColor: "#10C8A0",
-            width: 110,
+            width: "50%",
             padding: 5,
             borderRadius: 3,
             position: "absolute",
             bottom: 10,
             right: 10,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Text

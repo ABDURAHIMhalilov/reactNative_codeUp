@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Link } from "expo-router";
-import SyncStorage from "sync-storage";
 
 export default function Home() {
   // const [state, setState] = useState(SyncStorage.get("zafar"));
@@ -27,10 +26,10 @@ export default function Home() {
         />
       </View>
     );
-    SyncStorage.set('page', 0)
+    // SyncStorage.set('page', 0)
     setTimeout(() => {
       setFinal(null);
-    }, 1900);
+    }, 1000);
   }, []);
 
   return (
@@ -143,7 +142,7 @@ export default function Home() {
                   style={{
                     backgroundColor: "#536cfd",
                     padding: 5,
-                    borderRadius: "50%",
+                    borderRadius: "local-storage in react native50%",
                   }}
                 >
                   <AntDesign name="arrowright" size={35} color="white" />
