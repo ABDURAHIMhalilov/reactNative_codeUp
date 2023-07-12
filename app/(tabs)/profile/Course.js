@@ -8,11 +8,11 @@ import Feather from "react-native-vector-icons/Feather";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import StackLayout from "../home/_layout";
 import settings from "../home/setting";
-import Home from "./Home";
+import HomeScreen from "./Home";
 // import Course from "./Course";
-import Setting from "./Setting";
+import SettingScreen from "./Setting";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Mentor from "./Mentor";
+import MentorScreen from "./Mentor";
 
 const Course = () => {
   const Tab = createMaterialTopTabNavigator();
@@ -25,10 +25,10 @@ const Course = () => {
             fontSize: "8 !important",
           }}
           name="Мои курсы"
-          component={Home}
+          component={HomeScreen}
         />
-        <Tab.Screen name="Cертификаты" component={Setting} />
-        <Tab.Screen name="Hаставники" component={Mentor} />
+        <Tab.Screen name="Cертификаты" component={SettingScreen} />
+        <Tab.Screen name="Hаставники" component={MentorScreen} />
       </Tab.Navigator>
     </View>
   );
